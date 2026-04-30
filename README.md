@@ -1,15 +1,28 @@
-# Climate Challenge Week 0
+# African Climate Trend Analysis (EthioClimate Analytics)
 
-## Setup Instructions
+This project provides a data-driven analysis of climate vulnerabilities across Ethiopia, Kenya, Sudan, Tanzania, and Nigeria (2015–2026) to support the Ethiopian Ministry of Planning and Development ahead of COP32.
 
-1. Clone repo:
-git clone <https://github.com/blen19/climate-challenge-week0>
+## 🛠️ Project Setup & Environment (Task 1)
+To ensure reproducibility and professional standards, the following setup was implemented:
 
-2. Create virtual environment:
-python -m venv venv
+*   **Virtual Environment:** Managed via `venv` to isolate dependencies.
+*   **Version Control:** Git was used with a strict `.gitignore` policy to prevent the upload of raw NASA POWER datasets, maintaining repository hygiene.
+*   **Dependencies:** Key libraries include `pandas` for data manipulation, `scipy` for statistical testing, and `seaborn` for climate visualization.
 
-3. Activate:
-venv\Scripts\activate  (Windows)
+### Installation
+1. Clone the repo: `git clone https://github.com/blen19/climate-challenge-week0.git`
+2. Install requirements: `pip install -r requirements.txt`
 
-4. Install dependencies:
-pip install -r requirements.txt
+## 📊 Methodology & Data Cleaning (Task 2)
+The interim phase focused on establishing a clean, analysis-ready dataset:
+
+1.  **Data Ingestion:** Automated the merging of 5 separate country CSV files into a single consolidated DataFrame.
+2.  **Date Transformation:** Converted raw NASA temporal markers (`YEAR` and `DOY`) into standardized Python `datetime` objects.
+3.  **Data Quality Audit:** 
+    *   Checked for missing values and handled NASA's "No Data" flag (-999).
+    *   Verified temperature and precipitation ranges for regional consistency.
+4.  **EDA Approach:** Performed initial profiling using boxplots to identify climate "shocks" (outliers) in precipitation and heat stress.
+
+## 📈 Key Interim Findings
+*   **Vulnerability Ranking:** Sudan (Critical) followed by Tanzania and Nigeria.
+*   **Statistical Validation:** One-Way ANOVA confirmed significant climate variance between the studied nations (p < 0.05).
